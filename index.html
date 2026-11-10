@@ -7,7 +7,7 @@
 <meta name="description" content="OHTHREESIX is a rapper and R&B artist from Fort Worth, Texas. Listen to Real LUV, THIS FEELS LIKE HOME, Director and Texas Exes on Spotify, Apple Music and everywhere else.">
 <meta property="og:title" content="OHTHREESIX">
 <meta property="og:description" content="Late-night rap and R&B from Fort Worth to Austin. New single Real LUV out now.">
-<meta property="og:image" content="https://ohthreesix.com/assets/real-luv.jpg">
+<meta property="og:image" content="https://ohthreesix.com/assets/photo-hero-profile.jpg">
 <meta property="og:url" content="https://ohthreesix.com/">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
@@ -75,9 +75,17 @@ section{padding:5rem 0;border-top:1px solid var(--line)}
 }
 
 /* Hero */
-.hero{position:relative;overflow:hidden;padding:5.5rem 0 5rem;border-top:0}
-.hero::before{content:"";position:absolute;left:50%;top:-320px;width:900px;height:640px;transform:translateX(-50%);background:radial-gradient(closest-side,var(--glow),transparent 70%);pointer-events:none}
-.hero .wrap{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:3rem;align-items:center}
+.hero{position:relative;overflow:hidden;padding:6.5rem 0 5.5rem;border-top:0}
+.hero::before{content:"";position:absolute;left:-200px;top:-300px;width:900px;height:640px;background:radial-gradient(closest-side,rgba(112,86,214,.16),transparent 70%);pointer-events:none}
+.hero-photo{position:absolute;top:0;right:0;bottom:0;width:58%;margin:0}
+.hero-photo img{width:100%;height:100%;object-fit:cover;object-position:30% 30%}
+.hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--bg) 0%,rgba(12,10,15,.6) 12%,rgba(12,10,15,0) 38%),linear-gradient(0deg,var(--bg) 0%,rgba(12,10,15,0) 26%),linear-gradient(180deg,rgba(12,10,15,.55) 0%,rgba(12,10,15,0) 16%)}
+.hero .wrap{position:relative;z-index:1}
+.hero-copy{max-width:540px}
+.hero .release{margin-top:2.75rem;max-width:440px;grid-template-columns:96px minmax(0,1fr);padding:1rem;gap:1.1rem;background:rgba(26,22,31,.72);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+.hero .release h2{font-size:1.7rem}
+.hero .release .tag{margin-bottom:.5rem}
+.hero .release .meta{margin:.3rem 0 .75rem}
 .hero .eyebrow{margin-bottom:1.5rem}
 .wordmark{font-family:var(--display);font-weight:400;font-size:clamp(2.5rem,5.1vw,4.4rem);letter-spacing:.1em;white-space:nowrap;line-height:.95;margin:0 0 1.4rem;text-indent:.02em}
 .wordmark span{display:block;font-style:italic;font-weight:300;font-size:.34em;letter-spacing:.06em;color:var(--ink2);margin-top:.55rem;text-indent:0}
@@ -93,12 +101,13 @@ section{padding:5rem 0;border-top:1px solid var(--line)}
 .release .links a,.pill{font-weight:600;font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;color:var(--ink2);border:1px solid var(--line2);padding:.42rem .7rem;border-radius:3px;transition:color .2s,border-color .2s}
 .release .links a:hover,.pill:hover{border-color:var(--amber);color:var(--amber2)}
 @media (max-width:900px){
-  .hero{padding:4rem 0 3.5rem}
-  .hero .wrap{grid-template-columns:1fr;gap:2.75rem}
+  .hero{padding:0 0 3.5rem}
+  .hero-photo{position:relative;width:100%;height:auto;aspect-ratio:4/5;max-height:560px}
+  .hero-photo::after{background:linear-gradient(0deg,var(--bg) 3%,rgba(12,10,15,0) 45%),linear-gradient(180deg,rgba(12,10,15,.5) 0%,rgba(12,10,15,0) 18%)}
+  .hero .wrap{margin-top:-4.5rem}
 }
-@media (max-width:480px){
-  .release{grid-template-columns:1fr}
-  .release img{max-width:200px}
+@media (max-width:420px){
+  .hero .release{grid-template-columns:80px minmax(0,1fr)}
 }
 
 /* Platforms */
@@ -167,7 +176,16 @@ td.listen a:hover{border-color:var(--amber);color:var(--amber2)}
 .bio p:first-of-type{font-family:var(--display);font-size:1.55rem;line-height:1.3;font-weight:400;color:var(--ink)}
 .bio p{color:#D7CEC3}
 .bio em{color:var(--ink)}
-.facts{border-top:1px solid var(--line2);padding-top:1.25rem;position:sticky;top:90px}
+.facts dl{border-top:1px solid var(--line2);padding-top:1.25rem}
+.story-photo{margin:0 0 1.75rem}
+.story-photo img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:50% 30%;border-radius:6px;box-shadow:var(--shadow)}
+.gallery .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0}
+.gallery figure{margin:0}
+.gallery img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
+@media (max-width:720px){
+  .gallery .shots{grid-template-columns:repeat(3,78%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;-webkit-overflow-scrolling:touch}
+  .gallery figure{scroll-snap-align:start}
+}
 .facts dl{display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.25rem;margin:0;font-size:.9rem}
 .facts dt{font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.6rem;color:var(--ink3);padding-top:.3rem}
 .facts dd{margin:0;color:var(--ink)}
@@ -183,7 +201,7 @@ td.listen a:hover{border-color:var(--amber);color:var(--amber2)}
 .era h3{margin:.35rem 0 .6rem}
 .era p{max-width:60ch;color:var(--ink2);font-size:.95rem}
 .era .links{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1.1rem}
-@media (max-width:900px){.story .grid{grid-template-columns:1fr;gap:2.5rem}.facts{position:static}}
+@media (max-width:900px){.story .grid{grid-template-columns:1fr;gap:2.5rem}.story-photo{max-width:420px}}
 @media (max-width:560px){.era{grid-template-columns:1fr}.era img{max-width:180px}}
 
 /* Merch + Booking */
@@ -242,8 +260,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
 <main id="top">
 
 <section class="hero">
+  <figure class="hero-photo">
+    <img src="assets/photo-hero-profile.jpg" alt="OHTHREESIX in profile against the Austin skyline at night" width="1200" height="1314" fetchpriority="high">
+  </figure>
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <p class="eyebrow">Fort Worth &rarr; Austin, Texas</p>
       <h1 class="wordmark">OHTHREESIX<span>late-night rap &amp; R&amp;B</span></h1>
       <p class="lede"><strong>Songs for the drive home.</strong> Melodic storytelling, heartbreak R&amp;B and the polish of a day job, written between DFW and the 512 and released independently through OHTHREESIXMEDIA&reg;.</p>
@@ -257,7 +278,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
           Apple Music
         </a>
       </div>
-    </div>
 
     <aside class="release" aria-labelledby="latest-title">
       <img src="assets/real-luv.jpg" alt="Real LUV cover art" width="600" height="600">
@@ -272,6 +292,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
         </div>
       </div>
     </aside>
+    </div>
   </div>
 </section>
 
@@ -463,6 +484,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
   </div>
 </section>
 
+<section id="photos" class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <p class="eyebrow">Photos</p>
+        <h2>Austin, <em>after dark</em>.</h2>
+      </div>
+    </div>
+    <div class="shots">
+      <figure><img src="assets/photo-fence.jpg" alt="OHTHREESIX leaning on a wooden fence with downtown towers lit behind him" width="800" height="1050" loading="lazy"></figure>
+      <figure><img src="assets/photo-durag.jpg" alt="OHTHREESIX tying a purple durag, city lights blurred behind" width="800" height="992" loading="lazy"></figure>
+      <figure><img src="assets/photo-rail.jpg" alt="OHTHREESIX on a bridge at night, glancing up, the lake and skyline behind" width="800" height="1102" loading="lazy"></figure>
+    </div>
+  </div>
+</section>
+
 <section id="story" class="story">
   <div class="wrap">
     <div class="sec-head">
@@ -482,6 +519,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
         <p>Alongside those four he cites Drake, Larry June, Jace and Thouxanbanfauni, and he releases everything independently through his own label, OHTHREESIXMEDIA&reg;.</p>
       </div>
       <aside class="facts" aria-label="Quick facts">
+        <figure class="story-photo">
+          <img src="assets/photo-story-bridge.jpg" alt="OHTHREESIX leaning on a bridge railing with the Austin skyline behind him" width="900" height="1107" loading="lazy">
+        </figure>
         <dl>
           <dt>Hometown</dt><dd>Crowley, Texas</dd>
           <dt>Based</dt><dd>Fort Worth and Austin</dd>
