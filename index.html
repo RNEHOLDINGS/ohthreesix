@@ -182,7 +182,7 @@ td.listen a:hover{border-color:var(--amber);color:var(--amber2)}
 .gallery .shots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem;margin:0}
 .gallery figure{margin:0}
 .gallery img{width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;border-radius:6px}
-.photo-credit{margin-top:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.62rem;color:var(--ink3)}
+footer .photo-credit{display:block;margin-top:.35rem}
 @media (max-width:720px){
   .gallery .shots{grid-template-columns:repeat(3,78%);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.75rem;-webkit-overflow-scrolling:touch}
   .gallery figure{scroll-snap-align:start}
@@ -498,7 +498,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
       <figure><img src="assets/photo-durag.jpg" alt="OHTHREESIX tying a purple durag, city lights blurred behind" width="800" height="992" loading="lazy"></figure>
       <figure><img src="assets/photo-rail.jpg" alt="OHTHREESIX on a bridge at night, glancing up, the lake and skyline behind" width="800" height="1102" loading="lazy"></figure>
     </div>
-    <p class="photo-credit">Photos by Jessy Tran</p>
   </div>
 </section>
 
@@ -592,7 +591,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
       <a href="https://open.spotify.com/artist/1uVJ3FBU9ZXEb1qO58NFA5" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.7.7 0 0 1-1 .2c-2.6-1.6-5.9-2-9.8-1.1a.7.7 0 1 1-.3-1.4c4.2-1 7.9-.5 10.8 1.3.3.2.4.7.3 1zm1.2-2.7a.9.9 0 0 1-1.2.3c-3-1.8-7.5-2.4-11-1.3a.9.9 0 0 1-.5-1.7c4-1.2 9-.6 12.4 1.5.4.2.5.8.3 1.2zm.1-2.8C14.3 8.8 8.5 8.6 5.1 9.6a1 1 0 1 1-.6-2c3.9-1.2 10.4-1 14.5 1.5a1 1 0 0 1-1.1 1.8z"/></svg>Spotify</a>
       <a href="https://ohthreesixmedia.bigcartel.com" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 7h12l1 13H5z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>Store</a>
     </div>
-    <p>&copy; <span id="year">2026</span> OHTHREESIXMEDIA&reg;. All rights reserved.</p>
+    <p>&copy; <span id="year">2026</span> OHTHREESIXMEDIA&reg;. All rights reserved.<span class="photo-credit">All photos by Jessy Tran.</span></p>
   </div>
 </footer>
 
