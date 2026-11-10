@@ -171,6 +171,11 @@ td.listen a:hover{border-color:var(--amber);color:var(--amber2)}
 .facts dl{display:grid;grid-template-columns:auto 1fr;gap:.7rem 1.25rem;margin:0;font-size:.9rem}
 .facts dt{font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.6rem;color:var(--ink3);padding-top:.3rem}
 .facts dd{margin:0;color:var(--ink)}
+.facts dl{grid-template-columns:6.25rem 1fr}
+.facts h3{font-size:1.25rem;margin:2rem 0 1rem;padding-top:1.25rem;border-top:1px solid var(--line2)}
+.milestones{list-style:none;margin:0;padding:0;display:grid;gap:.7rem;font-size:.9rem}
+.milestones li{display:grid;grid-template-columns:6.25rem 1fr;gap:1.25rem}
+.milestones span{font-weight:600;text-transform:uppercase;letter-spacing:.14em;font-size:.6rem;color:var(--amber);padding-top:.3rem;font-variant-numeric:tabular-nums}
 .era{margin-top:3.5rem;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:1.75rem;display:grid;grid-template-columns:150px 1fr;gap:1.75rem;align-items:center}
 .era img{border-radius:var(--r);width:100%;height:auto;aspect-ratio:1;object-fit:cover}
 .era h3{margin:.35rem 0 .6rem}
@@ -461,16 +466,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
     <div class="sec-head">
       <div>
         <p class="eyebrow">Story</p>
-        <h2>From Crowley to <em>the 512</em>.</h2>
+        <h2>The <em>origin</em> story.</h2>
       </div>
     </div>
     <div class="grid">
       <div class="bio">
-        <p>OHTHREESIX makes the kind of rap and R&amp;B that belongs to the last hour of the night: smooth vocals, honest storytelling, and Texas in every bar.</p>
+        <p>OHTHREESIX makes rap and R&amp;B for the last hour of the night: smooth vocals, honest storytelling, and Texas in every bar.</p>
         <p>He was raised in Crowley, a town of about 3,000 people outside Fort Worth, and sang in choir his whole life before he ever touched a mic. The rapping started in high-school practice rooms, freestyling with classmates between rehearsals. Watching Lil Yachty get signed to Quality Control convinced him that fun, positive music could go somewhere, and he started taking his own seriously.</p>
-        <p>He broke through first as YOUNG036. Beginning with &ldquo;Sorority!&rdquo; in 2018 and the album <em>Greek Week</em> in 2020, his Greek-life anthems spread from campus to campus. &ldquo;6 Zetas in This Benz&rdquo; became a rush-week staple, chapters from Alabama to SUNY New Paltz got songs of their own, and the catalog passed half a million plays. The records took him on the road, touring the United States and performing the viral hits for the crowds that made them. Along the way he worked for the Kansas City Chiefs, an experience that still shows up in the music, from the single &ldquo;Hotel Kansas City&rdquo; to the way a business day and a studio night sit side by side in his writing.</p>
-        <p>In 2020 he moved to San Marcos to attend Texas State, and in late 2022 he relaunched as OHTHREESIX with &ldquo;God Bless Texas (State).&rdquo; The new name came with a new sound, melodic and after-hours, the polish of the corporate lifestyle set against heartbreak R&amp;B. Three albums followed in three years, <em>Texas Exes</em> (2024), <em>Director</em> (2025) and <em>THIS FEELS LIKE HOME</em> (2026), with collaborators including Tony In The Lab, AJ Snow, All Hail Y.T. and MsGold.</p>
-        <p>He cites Drake, PARTYNEXTDOOR, Jace, Lil Yachty, Thouxanbanfauni and Larry June as influences, and releases everything independently through his own label, OHTHREESIXMEDIA&reg;.</p>
+        <p>The stage came early. In 2018 he opened for Joyner Lucas, and in 2019 he opened for Maxo Kream. By then he was already breaking through as YOUNG036. Beginning with &ldquo;Sorority!&rdquo; in 2018 and the album <em>Greek Week</em> in 2020, his Greek-life anthems spread from campus to campus. &ldquo;6 Zetas in This Benz&rdquo; became a rush-week staple, chapters from Alabama to SUNY New Paltz got songs of their own, and the catalog passed half a million plays. The records took him on tour across the United States, performing the viral hits for the crowds that made them. The run reached far enough that he was featured on Fox News and in <em>Bama Rush</em>, the 2023 Max documentary about sorority recruitment at the University of Alabama.</p>
+        <p>Away from his own records he worked for the Kansas City Chiefs, and from 2021 to 2022 he worked with the dance duo Loud Luxury. Both still show up in the music, from the single &ldquo;Hotel Kansas City&rdquo; to the way a business day and a studio night sit side by side in his writing.</p>
+        <p>In 2020 he moved to San Marcos to attend Texas State, and in late 2022 he relaunched as OHTHREESIX with &ldquo;God Bless Texas (State).&rdquo; The new name came with a new sound, slower and after-hours, closer to the slow-burn R&amp;B of Brent Faiyaz, PARTYNEXTDOOR and Pimmie and the late-night melodies of Future than to the campus records that came before. Three albums followed in three years, <em>Texas Exes</em> (2024), <em>Director</em> (2025) and <em>THIS FEELS LIKE HOME</em> (2026), with collaborators including Tony In The Lab, AJ Snow, All Hail Y.T. and MsGold.</p>
+        <p>Alongside those four he cites Drake, Larry June, Jace and Thouxanbanfauni, and he releases everything independently through his own label, OHTHREESIXMEDIA&reg;.</p>
       </div>
       <aside class="facts" aria-label="Quick facts">
         <dl>
@@ -480,8 +486,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
           <dt>Since</dt><dd>2018 as YOUNG036, 2022 as OHTHREESIX</dd>
           <dt>Albums</dt><dd>Texas Exes, Director, THIS FEELS LIKE HOME</dd>
           <dt>Label</dt><dd>OHTHREESIXMEDIA&reg;</dd>
-          <dt>Sounds like</dt><dd>Drake, PARTYNEXTDOOR, Larry June</dd>
+          <dt>Influences</dt><dd>Brent Faiyaz, PARTYNEXTDOOR, Future, Pimmie</dd>
         </dl>
+        <h3>Stages &amp; screens</h3>
+        <ol class="milestones">
+          <li><span>2018</span><div>Opened for Joyner Lucas</div></li>
+          <li><span>2019</span><div>Opened for Maxo Kream</div></li>
+          <li><span>2021&ndash;22</span><div>Worked with Loud Luxury</div></li>
+          <li><span>2023</span><div>Featured in <em>Bama Rush</em> on Max</div></li>
+          <li><span>TV</span><div>Featured on Fox News</div></li>
+          <li><span>Road</span><div>Toured the US performing the YOUNG036 hits</div></li>
+        </ol>
       </aside>
     </div>
 
