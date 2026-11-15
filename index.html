@@ -110,6 +110,27 @@ section{padding:5rem 0;border-top:1px solid var(--line)}
   .hero .release{grid-template-columns:80px minmax(0,1fr)}
 }
 
+/* Release banner */
+.drop{position:relative;overflow:hidden;isolation:isolate;border-top:0;padding:3.25rem 0 3.5rem}
+.drop-bg{position:absolute;inset:-60px;width:calc(100% + 120px);height:calc(100% + 120px);object-fit:cover;filter:blur(48px) saturate(1.15);opacity:.5;z-index:-2}
+.drop::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(12,10,15,.88) 0%,rgba(12,10,15,.6) 55%,rgba(12,10,15,.8) 100%),linear-gradient(0deg,var(--bg) 0%,rgba(12,10,15,0) 35%)}
+.drop .wrap{display:grid;grid-template-columns:260px minmax(0,1fr);gap:3rem;align-items:center}
+.drop-cover{margin:0}
+.drop-cover img{width:100%;height:auto;aspect-ratio:1;object-fit:cover;border-radius:6px;box-shadow:0 30px 60px -22px rgba(0,0,0,.85)}
+.drop .eyebrow{color:var(--amber2);margin-bottom:.9rem}
+.drop h2{font-size:clamp(3rem,7vw,5.25rem);letter-spacing:.03em;line-height:.95}
+.drop .meta{color:var(--ink2);margin:.75rem 0 1.5rem;font-size:.95rem}
+.drop-credits{margin:1.9rem 0 0;padding-top:1.25rem;border-top:1px solid var(--line2);display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:.9rem 1.75rem}
+.drop-credits div{display:flex;flex-direction:column;gap:.2rem}
+.drop-credits dt{font-weight:600;text-transform:uppercase;letter-spacing:.16em;font-size:.58rem;color:var(--ink3)}
+.drop-credits dd{margin:0;font-size:.9rem;color:var(--ink)}
+@media (max-width:760px){
+  .drop{padding:2rem 0 2.5rem}
+  .drop .wrap{grid-template-columns:1fr;gap:1.5rem}
+  .drop-cover{max-width:220px}
+  .drop-credits{grid-template-columns:1fr 1fr;gap:.9rem 1.25rem}
+}
+
 /* Platforms */
 .platforms{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.75rem}
 .platform{display:flex;align-items:center;gap:.8rem;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:1rem 1.05rem;text-decoration:none;font-weight:600;text-transform:uppercase;letter-spacing:.12em;font-size:.7rem;transition:border-color .2s,background .2s}
@@ -260,6 +281,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
 
 <main id="top">
 
+<section class="drop" aria-labelledby="drop-title">
+  <img class="drop-bg" src="assets/seasons.jpg" alt="" aria-hidden="true">
+  <div class="wrap">
+    <figure class="drop-cover">
+      <img src="assets/seasons.jpg" alt="Seasons album cover: OHTHREESIX on a sunlit balcony" width="600" height="600" fetchpriority="high">
+    </figure>
+    <div>
+      <p class="eyebrow">New album &middot; Out now</p>
+      <h2 id="drop-title">Seasons</h2>
+      <p class="meta">9 tracks &middot; 28 minutes &middot; November 12, 2026</p>
+      <div class="cta-row">
+        <a class="btn btn-amber" href="https://open.spotify.com/album/2WlmVhQYbDejjFeVYqtw5g" target="_blank" rel="noopener">Listen on Spotify</a>
+        <a class="btn btn-line" href="https://music.apple.com/us/album/seasons/6834494066" target="_blank" rel="noopener">Apple Music</a>
+        <a class="btn btn-line" href="https://www.deezer.com/album/1146328331" target="_blank" rel="noopener">Deezer</a>
+      </div>
+      <dl class="drop-credits">
+        <div><dt>Artist</dt><dd>OHTHREESIX</dd></div>
+        <div><dt>Label</dt><dd>OHTHREESIXMEDIA&reg;</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
 <section class="hero">
   <figure class="hero-photo">
     <img src="assets/photo-hero-profile.jpg" alt="OHTHREESIX in profile against the Austin skyline at night" width="1200" height="1314" fetchpriority="high">
@@ -279,20 +323,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
           Apple Music
         </a>
       </div>
-
-    <aside class="release" aria-labelledby="latest-title">
-      <img src="assets/seasons.jpg" alt="Seasons album cover" width="600" height="600">
-      <div>
-        <span class="tag">New album</span>
-        <h2 id="latest-title">Seasons</h2>
-        <p class="meta">9 tracks &middot; November 12, 2026</p>
-        <div class="links">
-          <a href="https://open.spotify.com/album/2WlmVhQYbDejjFeVYqtw5g" target="_blank" rel="noopener">Spotify</a>
-          <a href="https://music.apple.com/us/album/seasons/6834494066" target="_blank" rel="noopener">Apple Music</a>
-          <a href="https://www.deezer.com/album/1146328331" target="_blank" rel="noopener">Deezer</a>
-        </div>
-      </div>
-    </aside>
     </div>
   </div>
 </section>
