@@ -173,6 +173,19 @@ section{padding:5rem 0;border-top:1px solid var(--line)}
 .tracks .dur{color:var(--ink3);font-size:.82rem;font-variant-numeric:tabular-nums}
 .popular-foot{margin-top:1.25rem;display:flex;gap:.6rem;flex-wrap:wrap}
 @media (max-width:760px){.tracks{grid-template-columns:1fr;grid-template-rows:none;grid-auto-flow:row}}
+/* Mailing list */
+.signup .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:2.5rem;align-items:center}
+.signup .eyebrow{margin-bottom:.75rem}
+.signup p.lede{color:var(--ink2);max-width:42ch;margin-top:.75rem}
+.signup-form{display:flex;flex-direction:column;gap:.6rem}
+.signup-row{display:flex;gap:.5rem}
+.signup-row input{flex:1;min-width:0;font:inherit;font-size:.95rem;color:var(--ink);background:var(--card);border:1px solid var(--line2);border-radius:var(--r);padding:.85rem 1rem}
+.signup-row input::placeholder{color:var(--ink3)}
+.signup-row input:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:transparent}
+.signup-form small{color:var(--ink3);font-size:.78rem}
+.signup-status{font-size:.88rem;color:var(--amber2);min-height:1.2em}
+@media (max-width:760px){.signup .wrap{grid-template-columns:1fr;gap:1.5rem}.signup-row{flex-direction:column}.signup-row .btn{justify-content:center}}
+
 /* Watch */
 .videos{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
 .video{background:var(--card);border:1px solid var(--line);border-radius:8px;overflow:hidden}
@@ -241,6 +254,9 @@ footer .photo-credit{display:block;margin-top:.35rem}
 .panel .email{font-family:var(--display);font-weight:500;font-size:clamp(1.25rem,2.4vw,1.7rem);text-decoration:none;word-break:break-all;border-bottom:1px solid currentColor;line-height:1.2}
 .panel-book .btn-line{border-color:rgba(26,18,8,.4);color:#1A1208}
 .panel-book .btn-line:hover{background:rgba(26,18,8,.08);border-color:#1A1208}
+.book-actions{display:flex;gap:.5rem;flex-wrap:wrap}
+.panel-book .btn-ink{background:#1A1208;border-color:#1A1208;color:var(--amber2)}
+.panel-book .btn-ink:hover{background:#2A1D0C}
 @media (max-width:860px){.duo{grid-template-columns:1fr}}
 @media (max-width:520px){.panel-merch{grid-template-columns:1fr}.panel-merch img{max-width:200px;order:-1}}
 
@@ -275,6 +291,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
       <a href="#story">Story</a>
       <a href="#merch">Merch</a>
       <a href="#booking">Booking</a>
+      <a href="/press/">Press</a>
       <a class="btn btn-amber btn-sm" href="https://open.spotify.com/artist/1uVJ3FBU9ZXEb1qO58NFA5" target="_blank" rel="noopener">Play on Spotify</a>
     </nav>
   </div>
@@ -467,6 +484,26 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
     </div>  </div>
 </section>
 
+<!-- Mailing list: hidden until the Kit form is connected. -->
+<section id="list" class="signup" hidden>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Mailing list</p>
+      <h2>Hear it <em>first</em>.</h2>
+      <p class="lede">Release days, shows and merch drops, sent straight to your inbox.</p>
+    </div>
+    <form class="signup-form" method="post" action="" data-kit-form="">
+      <label for="signup-email" class="eyebrow" style="color:var(--ink3)">Email address</label>
+      <div class="signup-row">
+        <input id="signup-email" type="email" name="email_address" placeholder="you@example.com" autocomplete="email" required>
+        <button class="btn btn-amber" type="submit">Sign up</button>
+      </div>
+      <p class="signup-status" role="status" aria-live="polite"></p>
+      <small>Unsubscribe anytime with one click.</small>
+    </form>
+  </div>
+</section>
+
 <section id="watch">
   <div class="wrap">
     <div class="sec-head">
@@ -596,7 +633,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
       <h2>Book OHTHREESIX.</h2>
       <p>Shows, campus events, features and press. One email reaches management.</p>
       <a class="email" href="mailto:036mgmt@gmail.com?subject=Booking%20inquiry%20for%20OHTHREESIX">036mgmt@gmail.com</a>
-      <a class="btn btn-line btn-sm" href="https://www.instagram.com/ohthreesix/" target="_blank" rel="noopener">Or DM on Instagram</a>
+      <div class="book-actions">
+        <a class="btn btn-ink btn-sm" href="/press/">Press kit</a>
+        <a class="btn btn-line btn-sm" href="https://www.instagram.com/ohthreesix/" target="_blank" rel="noopener">Or DM on Instagram</a>
+      </div>
     </div>
   </div>
 </section>
