@@ -484,15 +484,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
     </div>  </div>
 </section>
 
-<!-- Mailing list: hidden until the Kit form is connected. -->
-<section id="list" class="signup" hidden>
+<!-- Mailing list: Kit form 10195457 (double opt-in). -->
+<section id="list" class="signup">
   <div class="wrap">
     <div>
       <p class="eyebrow">Mailing list</p>
       <h2>Hear it <em>first</em>.</h2>
       <p class="lede">Release days, shows and merch drops, sent straight to your inbox.</p>
     </div>
-    <form class="signup-form" method="post" action="" data-kit-form="">
+    <form class="signup-form" method="post" action="https://app.kit.com/forms/10195457/subscriptions" data-kit-form="10195457">
       <label for="signup-email" class="eyebrow" style="color:var(--ink3)">Email address</label>
       <div class="signup-row">
         <input id="signup-email" type="email" name="email_address" placeholder="you@example.com" autocomplete="email" required>
@@ -684,6 +684,31 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1.5re
     });
   });
   document.getElementById('year').textContent=new Date().getFullYear();
+
+  // Mailing list: post to Kit in the background and report the result inline.
+  // Without JavaScript the form still posts to Kit's own page.
+  var form=document.querySelector('form[data-kit-form]');
+  if(form&&window.fetch){
+    var status=form.querySelector('.signup-status'),btn=form.querySelector('button[type="submit"]'),input=form.querySelector('input[name="email_address"]');
+    form.addEventListener('submit',function(e){
+      e.preventDefault();
+      btn.disabled=true;btn.textContent='Signing up…';status.textContent='';
+      fetch(form.action,{method:'POST',headers:{'Accept':'application/json'},body:new URLSearchParams(new FormData(form))})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if(d&&d.status==='success'){
+            status.textContent='Almost there. Check your inbox and tap the link to confirm.';
+            form.reset();
+          }else{
+            var invalid=d&&d.errors&&d.errors.fields&&d.errors.fields.indexOf('email_address')>-1;
+            status.textContent=invalid?'That email address doesn’t look right. Check it and try again.':'That didn’t go through. Try again in a moment.';
+            input.focus();
+          }
+        })
+        .catch(function(){status.textContent='That didn’t go through. Check your connection and try again.';})
+        .then(function(){btn.disabled=false;btn.textContent='Sign up';});
+    });
+  }
 })();
 </script>
 <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e36bdc5fc3ab4e3ba1f3885beee9768b"}'></script><!-- End Cloudflare Web Analytics -->
